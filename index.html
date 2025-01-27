@@ -1,100 +1,48 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Porsche - Ceny</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="https://www.porsche.com/favicon.ico" sizes="32x32">
+    <title>Nexorixikova Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
 </head>
-
-
 <body>
 
 
-    <div class="container">
-        <!-- Logo -->
-        <header>
-            <div class="logo">
-                <h1><a href="https://porsche.cz/" target="_blank">Porsche</a></h1>
-            </div>
-        </header>
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-content">
+            <p>Načítání...</p>
+        </div>
+    </div>
 
-        <!-- Menu -->
-        <nav>
+
+
+    <div class="layout">
+        <nav class="sidebar">
             <ul>
-                <li><a href="index.html" class="active">Ceny</a></li>
-                <li><a href="typ.html">Typy aut</a></li>
-                <li><a href="info.html">Info</a></li>
-		<li><a href="zakladatel.html">Zakladatel</a></li>
+                <li><a href="server_jars.html">Server JARy</a></li>
+                <li><a href="plugins.html">Pluginy</a></li>
+                <li><a href="datapacks.html">Datapacky</a></li>
+                <li><a href="optimization.html">Optimalizace</a></li>
+                <li><a href="resources.html">Zdroje</a></li>
             </ul>
         </nav>
 
-        <!-- Main Content -->
-        <main>
-            <h2>Průměrné ceny Porsche</h2>
-            <p>Níže je uvedena cenová tabulka pro 10 modelů Porsche. Na konci najdete průměrnou cenu všech modelů.</p>
-
-            <!-- Table -->
-            <table>
-                <thead>
-                    <tr>
-                        <th>Model</th>
-                        <th>Cena (Kč)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Porsche 911</td>
-                        <td>2,500,000 Kč</td>
-                    </tr>
-                    <tr>
-                        <td>Porsche Taycan</td>
-                        <td>3,000,000 Kč</td>
-                    </tr>
-                    <tr>
-                        <td>Porsche 718 Cayman</td>
-                        <td>1,800,000 Kč</td>
-                    </tr>
-                    <tr>
-                        <td>Porsche 718 Boxster</td>
-                        <td>1,950,000 Kč</td>
-                    </tr>
-                    <tr>
-                        <td>Porsche Panamera</td>
-                        <td>3,500,000 Kč</td>
-                    </tr>
-                    <tr>
-                        <td>Porsche Macan</td>
-                        <td>2,200,000 Kč</td>
-                    </tr>
-                    <tr>
-                        <td>Porsche Cayenne</td>
-                        <td>3,000,000 Kč</td>
-                    </tr>
-                    <tr>
-                        <td>Porsche 911 Turbo</td>
-                        <td>3,200,000 Kč</td>
-                    </tr>
-                    <tr>
-                        <td>Porsche 911 GT3</td>
-                        <td>3,800,000 Kč</td>
-                    </tr>
-                    <tr>
-                        <td>Porsche 918 Spyder</td>
-                        <td>10,000,000 Kč</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3>Průměrná cena modelů Porsche</h3>
-            <p>Průměrná cena všech modelů Porsche je: <strong>3,335,000 Kč</strong></p>
+        <main class="content">
+            <h1>Vítej v mojí server/minecraft guide.</h1>
+            <p>Vyber si sekce z levého menu.</p>
         </main>
-
-        <!-- Footer -->
-        <footer>
-            <p>&copy; Dominik Hanslík</p>
-        </footer>
     </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Nexorixik Guide</p>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+
 </body>
 </html>
