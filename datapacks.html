@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pluginy pro Minecraft Servery</title>
+    <title>Datapacky pro Minecraft</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-
+    <script>
+        function toggleInfo(event, id) {
+            event.preventDefault();
+            var info = document.getElementById(id);
+            if (info.style.display === "none") {
+                info.style.display = "block";
+            } else {
+                info.style.display = "none";
+            }
+        }
+    </script>
 </head>
 <body>
-
-
     <!-- Loader -->
     <div id="loader">
         <div class="loader-content">
@@ -18,56 +26,56 @@
         </div>
     </div>
     <div class="layout">
-
-
         <nav class="sidebar">
             <ul>
                 <li><a href="server_jars.html">Serverové JARy</a></li>
                 <li><a href="plugins.html">Pluginy</a></li>
                 <li><a href="index.html"><----</a></li>
                 <li><a href="optimization.html">Optimalizace</a></li>
-                <li><a href="resources.html">Zdroje</a></li>
+                <li><a href="mody.html">Módy</a></li>
             </ul>
         </nav>
-
         <main class="content">
             <h1>Datapacky pro Minecraft</h1>
             <p>Datapacky jsou skvělý způsob, jak přidat nové funkce a změny do hry Minecraft bez nutnosti použití pluginů. Můžete si je stáhnout, nainstalovat a využívat na vašem serveru nebo v singleplayeru. Datapacky jsou velice flexibilní a jednoduše se instalují.</p>
 
             <h2>Co jsou to Datapacky?</h2>
-            <p><strong>Datapack</strong> je soubor, který obsahuje kód a soubory pro změnu nebo přidání nových funkcí do Minecraftu. Na rozdíl od pluginů, které jsou určeny pro servery běžící na platformách jako Spigot nebo Paper, datapacky fungují přímo v rámci Minecraft Vanilla verze (tedy bez nutnosti modifikovat hru externími klienty nebo servery).</p>
+            <button class="mod-button" onclick="toggleInfo(event, 'what-are-datapacks')">Co jsou to Datapacky?</button>
+            <div id="what-are-datapacks" class="mod-info" style="display:none;">
+                <p><strong>Datapack</strong> je soubor, který obsahuje kód a soubory pro změnu nebo přidání nových funkcí do Minecraftu. Na rozdíl od pluginů, které jsou určeny pro servery běžící na platformách jako Spigot nebo Paper, datapacky fungují přímo v rámci Minecraft Vanilla verze (tedy bez nutnosti modifikovat hru externími klienty nebo servery).</p>
+            </div>
 
             <h2>Co dokážou Datapacky?</h2>
-            <p>Datapacky mohou vylepšit a změnit hru různými způsoby. Některé z možností, které nabízí, zahrnují:</p>
-            <ul>
-                <li><strong>Nové herní mechaniky</strong> - Můžete přidat nové herní prvky, jako například nové recepty, nové struktury, nebo nové způsoby interakce s prostředím.</li>
-                <li><strong>Úpravy existujících mechanik</strong> - Datapacky mohou upravit chování původních herních funkcí, například upravit systém achievementů, vylepšit bojové mechaniky nebo měnit počasí ve hře.</li>
-                <li><strong>Automatizace</strong> - S datapacky můžete nastavit různé automatické procesy, jako je sběr surovin, automatické otevírání dverí nebo nastavení spawnů nových bloků.</li>
-                <li><strong>Vylepšení multiplayeru</strong> - Na serverech můžete například přidat nové herní mody, výzvy nebo režimy, které zlepší zážitek pro hráče. Můžete přidávat pravidla, která omezí nebo upraví způsob, jakým hráči interagují s prostředím nebo mezi sebou.</li>
-            </ul>
+            <button class="mod-button" onclick="toggleInfo(event, 'what-can-datapacks-do')">Co dokážou Datapacky?</button>
+            <div id="what-can-datapacks-do" class="mod-info" style="display:none;">
+                <ul>
+                    <li><strong>Nové herní mechaniky</strong> - Můžete přidat nové herní prvky, jako například nové recepty, nové struktury, nebo nové způsoby interakce s prostředím.</li>
+                    <li><strong>Úpravy existujících mechanik</strong> - Datapacky mohou upravit chování původních herních funkcí, například upravit systém achievementů, vylepšit bojové mechaniky nebo měnit počasí ve hře.</li>
+                    <li><strong>Automatizace</strong> - S datapacky můžete nastavit různé automatické procesy, jako je sběr surovin, automatické otevírání dveří nebo nastavení spawnů nových bloků.</li>
+                    <li><strong>Vylepšení multiplayeru</strong> - Na serverech můžete například přidat nové herní mody, výzvy nebo režimy, které zlepší zážitek pro hráče. Můžete přidávat pravidla, která omezí nebo upraví způsob, jakým hráči interagují s prostředím nebo mezi sebou.</li>
+                </ul>
+            </div>
 
             <h2>Kam hledat Datapacky</h2>
-            <p>Existuje několik skvělých míst, kde si můžete stáhnout nebo najít datapacky pro svůj Minecraft server nebo pro váš svět. Zde je několik doporučených zdrojů:</p>
-            <ul>
-                <li><a href="https://modrinth.com/datapacks" target="_blank">Modrinth - Datapacky</a> - Skvělá databáze open-source datapacků. Nabízí široký výběr datapacků pro všechny druhy herních modifikací.</li>
-                <li><a href="https://vanillatweaks.net/picker/datapacks/" target="_blank">Vanilla Tweaks - Datapacky</a> - Web, který nabízí spoustu užitečných a jednoduchých datapacků pro vylepšení vašich světů a serverů. Snadná instalace a přizpůsobení podle potřeby.</li>
-                <li><a href="https://minecraft.gamepedia.com/Datapacks" target="_blank">Minecraft Wiki - Datapacky</a> - Oficiální wiki stránka Minecraftu obsahující podrobný návod o tom, jak pracovat s datapacky, a odkazy na různé zdroje.</li>
-
-            </ul>
+            <button class="mod-button" onclick="toggleInfo(event, 'where-to-find-datapacks')">Kam hledat Datapacky</button>
+            <div id="where-to-find-datapacks" class="mod-info" style="display:none;">
+                <ul>
+                    <li><a href="https://modrinth.com/datapacks" target="_blank">Modrinth - Datapacky</a> - Skvělá databáze open-source datapacků. Nabízí široký výběr datapacků pro všechny druhy herních modifikací.</li>
+                    <li><a href="https://vanillatweaks.net/picker/datapacks/" target="_blank">Vanilla Tweaks - Datapacky</a> - Web, který nabízí spoustu užitečných a jednoduchých datapacků pro vylepšení vašich světů a serverů. Snadná instalace a přizpůsobení podle potřeby.</li>
+                </ul>
+            </div>
 
             <h2>Jak nainstalovat Datapack</h2>
-            <p>Instalace datapacku je velmi jednoduchá a může být provedena během několika minut. Zde je postup, jak na to:</p>
-            <ul>
-                <li>1. Stáhněte si požadovaný datapack ze spolehlivého zdroje.</li>
-                <li>2. Otevřete složku s vaším minecraft světem (v singleplayeru nebo na serveru).</li>
-                <li>3. Přejděte do složky <code>world</code> a otevřete složku <code>datapacks</code> (pokud neexistuje, vytvořte ji).</li>
-                <li>4. Přetáhněte soubor datapacku do této složky.</li>
-                <li>5. Restartujte server nebo znovu načtěte svět ve hře a datapack by měl být automaticky načten.</li>
-            </ul>
-
-            <h2>Proč používat Datapacky?</h2>
-            <p>Datapacky jsou skvělým způsobem, jak přizpůsobit vaši hru, aniž byste museli měnit základní kód Minecraftu nebo používat servery s modifikacemi. Jsou ideální pro hráče, kteří chtějí experimentovat s novými herními mechanikami a vylepšeními bez potřeby serverových pluginů.</p>
-            <p>Datapacky jsou lehké a efektivní, což znamená, že nebudou výrazně ovlivňovat výkon serveru. Mnoho datapacků je také navrženo tak, aby bylo snadno instalovatelné a přizpůsobitelné pro vaše konkrétní potřeby.</p>
+            <button class="mod-button" onclick="toggleInfo(event, 'how-to-install-datapack')">Jak nainstalovat Datapack</button>
+            <div id="how-to-install-datapack" class="mod-info" style="display:none;">
+                <ul>
+                    <li>1. Stáhněte si požadovaný datapack ze spolehlivého zdroje.</li>
+                    <li>2. Otevřete složku s vaším minecraft světem (v singleplayeru nebo na serveru).</li>
+                    <li>3. Přejděte do složky <code>world</code> a otevřete složku <code>datapacks</code> (pokud neexistuje, vytvořte ji).</li>
+                    <li>4. Přetáhněte soubor datapacku do této složky.</li>
+                    <li>5. Restartujte server nebo znovu načtěte svět ve hře a datapack by měl být automaticky načten.</li>
+                </ul>
+            </div>
 
             <div class="spacer"></div>
             <p style="text-align: center; color: #7f8c8d;">Děkujeme, že používáte náš průvodce pro Minecraft datapacky!</p>
@@ -80,6 +88,5 @@
         </div>
     </footer>
     <script src="scripts.js"></script>
-
 </body>
 </html>

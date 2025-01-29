@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pluginy pro Minecraft Servery</title>
+    <title>Optimalizace Minecraft Serveru</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-
+    <script>
+        function toggleInfo(event, id) {
+            event.preventDefault();
+            var info = document.getElementById(id);
+            if (info.style.display === "none") {
+                info.style.display = "block";
+            } else {
+                info.style.display = "none";
+            }
+        }
+    </script>
 </head>
 <body>
-
-
     <!-- Loader -->
     <div id="loader">
         <div class="loader-content">
@@ -18,15 +26,13 @@
         </div>
     </div>
     <div class="layout">
-
-
         <nav class="sidebar">
             <ul>
                 <li><a href="server_jars.html">Serverové JARy</a></li>
                 <li><a href="plugins.html">Pluginy</a></li>
                 <li><a href="datapacks.html">Datapacky</a></li>
                 <li><a href="index.html"><----</a></li>
-                <li><a href="resources.html">Zdroje</a></li>
+                <li><a href="mody.html">Módy</a></li>
             </ul>
         </nav>
         <main class="content">
@@ -34,43 +40,53 @@
             <p>Optimalizace Minecraft serveru je klíčová, pokud chcete minimalizovat lagy a zajistit hladký chod hry pro všechny hráče. Tento průvodce vám pomůže pochopit základní principy optimalizace, nástroje, které můžete použít, a nejlepší praktiky pro správu serveru.</p>
 
             <h2>Proč optimalizovat server?</h2>
-            <p>Pokud váš server zažívá problémy jako nízký TPS (Ticks Per Second), lagy při pohybu nebo interakcích, nebo pokud se hráči odpojují kvůli výkonovým problémům, je třeba provést optimalizaci. Optimalizovaný server nejen že běží rychleji, ale také zajišťuje lepší zážitek pro všechny hráče.</p>
+            <button class="mod-button" onclick="toggleInfo(event, 'why-optimize')">Proč optimalizovat server?</button>
+            <div id="why-optimize" class="mod-info" style="display:none;">
+                <p>Pokud váš server zažívá problémy jako nízký TPS (Ticks Per Second), lagy při pohybu nebo interakcích, nebo pokud se hráči odpojují kvůli výkonovým problémům, je třeba provést optimalizaci. Optimalizovaný server nejen že běží rychleji, ale také zajišťuje lepší zážitek pro všechny hráče.</p>
+            </div>
 
             <h2>Základní tipy pro optimalizaci</h2>
-            <p>Několik základních kroků, které můžete udělat pro zlepšení výkonu:</p>
-            <ul>
-                <li><strong>Vyberte správný JAR:</strong> Doporučujeme použít optimalizované verze, jako jsou <a href="server_jars.html">Paper</a>, <a href="https://purpurmc.org/" target="_blank">Purpur</a> nebo <a href="https://www.folia.gg/" target="_blank">Folia</a>. Tyto JARy nabízejí lepší výkon než Vanilla.</li>
-                <li><strong>Nastavte serverové parametry:</strong> Upravte <code>server.properties</code>, <code>bukkit.yml</code>, <code>spigot.yml</code>, a <code>paper.yml</code> pro optimalizaci výkonu. Například snižte <code>view-distance</code> a <code>simulation-distance</code>.</li>
-                <li><strong>Minimalizujte pluginy:</strong> Nepoužívejte příliš mnoho pluginů nebo špatně napsané pluginy. Zkontrolujte, které pluginy spotřebovávají nejvíce výkonu, například pomocí <a href="https://modrinth.com/plugin/spark" target="_blank">Spark</a>.</li>
-                <li><strong>Odstraňte nepoužívané entity:</strong> Entity jako zvířata, itemy na zemi a farmy mohou značně zatěžovat server. Používejte pluginy jako <a href="https://github.com/aikar/clearlagg" target="_blank">ClearLag</a> na automatické čištění entity.</li>
-                <li><strong>Omezte Redstone a farmy:</strong> Velké Redstone obvody a automatizované farmy jsou jednou z nejčastějších příčin lagů. Nastavte pravidla na jejich omezení.</li>
-            </ul>
+            <button class="mod-button" onclick="toggleInfo(event, 'basic-tips')">Základní tipy pro optimalizaci</button>
+            <div id="basic-tips" class="mod-info" style="display:none;">
+                <ul>
+                    <li><strong>Vyberte správný JAR:</strong> Doporučujeme použít optimalizované verze, jako jsou <a href="server_jars.html">Paper</a>, <a href="https://purpurmc.org/" target="_blank">Purpur</a> nebo <a href="https://papermc.io/software/folia" target="_blank">Folia</a>. Tyto JARy nabízejí lepší výkon než Vanilla.</li>
+                    <li><strong>Nastavte serverové parametry:</strong> Upravte <code>server.properties</code>, <code>bukkit.yml</code>, <code>spigot.yml</code>, a <code>paper.yml</code> pro optimalizaci výkonu. Například snižte <code>view-distance</code> a <code>simulation-distance</code>.</li>
+                    <li><strong>Minimalizujte pluginy:</strong> Nepoužívejte příliš mnoho pluginů nebo špatně napsané pluginy. Zkontrolujte, které pluginy spotřebovávají nejvíce výkonu, například pomocí <a href="https://modrinth.com/plugin/spark" target="_blank">Spark</a>.</li>
+                    <li><strong>Odstraňte nepoužívané entity:</strong> Entity jako zvířata, itemy na zemi a farmy mohou značně zatěžovat server. Používejte pluginy jako <a href="https://github.com/aikar/clearlagg" target="_blank">ClearLag</a> na automatické čištění entity.</li>
+                    <li><strong>Omezte Redstone a farmy:</strong> Velké Redstone obvody a automatizované farmy jsou jednou z nejčastějších příčin lagů. Nastavte pravidla na jejich omezení.</li>
+                </ul>
+            </div>
 
             <h2>Pokročilé optimalizační nástroje</h2>
-            <p>Pokud základní optimalizace nestačí, zvažte použití těchto nástrojů:</p>
-            <ul>
-                <li><a href="https://modrinth.com/plugin/spark" target="_blank">Spark</a> - Analyzuje výkon serveru a ukáže, které procesy zabírají nejvíce času.</li>
-                <li><a href="https://github.com/aikar/flags" target="_blank">Aikar's Flags</a> - Doporučené JVM parametry pro optimalizaci běhu serveru.</li>
-                <li><a href="https://github.com/PaperMC/Paper" target="_blank">Timings</a> - Vestavěný nástroj v Paper serverech, který ukazuje, co na serveru způsobuje lagy.</li>
-                <li><a href="https://modrinth.com/plugin/chunky" target="_blank">Chunky</a> - Umožňuje předgenerovat světy, což snižuje lagy způsobené načítáním chunků.</li>
-            </ul>
+            <button class="mod-button" onclick="toggleInfo(event, 'advanced-tools')">Pokročilé optimalizační nástroje</button>
+            <div id="advanced-tools" class="mod-info" style="display:none;">
+                <ul>
+                    <li><a href="https://modrinth.com/plugin/spark" target="_blank">Spark</a> - Analyzuje výkon serveru a ukáže, které procesy zabírají nejvíce času.</li>
+                    <li><a href="https://docs.papermc.io/paper/aikars-flags" target="_blank">Aikar's Flags</a> - Doporučené JVM parametry pro optimalizaci běhu serveru.</li>
+                    <li><a href="https://www.spigotmc.org/wiki/timings/" target="_blank">Timings</a> - Vestavěný nástroj v Paper serverech, který ukazuje, co na serveru způsobuje lagy.</li>
+                    <li><a href="https://modrinth.com/plugin/chunky" target="_blank">Chunky</a> - Umožňuje předgenerovat světy, což snižuje lagy způsobené načítáním chunků.</li>
+                </ul>
+            </div>
 
             <h2>Co dělat, když server laguje?</h2>
-            <ol>
-                <li><strong>Spusťte Timings report:</strong> Pokud používáte Paper nebo jiný optimalizovaný JAR, spusťte příkaz <code>/timings report</code>. Získáte podrobný přehled o tom, co zpomaluje váš server.</li>
-                <li><strong>Zkontrolujte pluginy:</strong> Pluginy jako <a href="https://modrinth.com/plugin/spark" target="_blank">Spark</a> vám pomohou zjistit, které pluginy zabírají nejvíce výkonu.</li>
-                <li><strong>Snižte počet entit:</strong> Použijte příkaz <code>/kill @e[type=!player]</code> pro odstranění nepotřebných entit (opatrně).</li>
-                <li><strong>Přegenerujte svět:</strong> Pokud je problém způsoben načítáním chunků, použijte nástroje jako <a href="https://modrinth.com/plugin/chunky" target="_blank">Chunky</a>.</li>
-                <li><strong>Vylepšete hardware:</strong> Pokud vše ostatní selže, zvažte přidání více RAM, rychlejšího procesoru nebo přechod na lepší hosting.</li>
-            </ol>
+            <button class="mod-button" onclick="toggleInfo(event, 'lagging-server')">Co dělat, když server laguje?</button>
+            <div id="lagging-server" class="mod-info" style="display:none;">
+                <ol>
+                    <li><strong>Spusťte Timings report:</strong> Pokud používáte Paper nebo jiný optimalizovaný JAR, spusťte příkaz <code>/timings report</code>. Získáte podrobný přehled o tom, co zpomaluje váš server.</li>
+                    <li><strong>Zkontrolujte pluginy:</strong> Pluginy jako <a href="https://modrinth.com/plugin/spark" target="_blank">Spark</a> vám pomohou zjistit, které pluginy zabírají nejvíce výkonu.</li>
+                    <li><strong>Snižte počet entit:</strong> Použijte příkaz <code>/kill @e[type=!player]</code> pro odstranění nepotřebných entit (opatrně).</li>
+                    <li><strong>Přegenerujte svět:</strong> Pokud je problém způsoben načítáním chunků, použijte nástroje jako <a href="https://modrinth.com/plugin/chunky" target="_blank">Chunky</a>.</li>
+                    <li><strong>Vylepšete hardware:</strong> Pokud vše ostatní selže, zvažte přidání více RAM, rychlejšího procesoru nebo přechod na lepší hosting.</li>
+                </ol>
+            </div>
 
             <h2>Doporučené zdroje</h2>
-            <ul>
-                <li><a href="https://github.com/PaperMC/Paper/wiki/Optimizing-TPS" target="_blank">PaperMC - Optimalizace TPS</a> - Podrobný průvodce optimalizací serverů běžících na Paperu.</li>
-                <li><a href="https://modrinth.com/" target="_blank">Modrinth</a> - Místo s kvalitními pluginy a nástroji pro optimalizaci serverů.</li>
-                <li><a href="https://mcflags.emc.gs/" target="_blank">Aikar's Flags</a> - Přesné nastavení JVM parametrů pro lepší výkon Minecraft serveru.</li>
-                <li><a href="https://www.spigotmc.org/forums/spigot-help.40/" target="_blank">SpigotMC Forum</a> - Komunita, která vám pomůže s optimalizací a řešením problémů.</li>
-            </ul>
+            <button class="mod-button" onclick="toggleInfo(event, 'recommended-resources')">Doporučené zdroje</button>
+            <div id="recommended-resources" class="mod-info" style="display:none;">
+                <ul>
+                    <li><a href="https://github.com/YouHaveTrouble/minecraft-optimization?tab=readme-ov-file" target="_blank">Optimalizace</a> - Podrobný průvodce optimalizací serverů.</li>
+                </ul>
+            </div>
 
             <div class="spacer"></div>
             <p style="text-align: center; color: #7f8c8d;">Sledujte tyto tipy a váš server poběží hladce jako nikdy předtím!</p>
@@ -82,7 +98,6 @@
             <p>&copy; 2025 Nexorixik Guide</p>
         </div>
     </footer>
-	<script src="scripts.js"></script>
-
+    <script src="scripts.js"></script>
 </body>
 </html>

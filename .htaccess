@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Přepisování URL pro hlavní stránku
+RewriteRule ^home$ index.html [L]
+
+# Přepisování URL pro ostatní stránky
+RewriteRule ^server_jars$ server_jars.html [L]
+RewriteRule ^plugins$ plugins.html [L]
+RewriteRule ^datapacks$ datapacks.html [L]
+RewriteRule ^optimization$ optimization.html [L]
+RewriteRule ^mody$ mody.html [L]

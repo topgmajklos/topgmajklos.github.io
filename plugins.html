@@ -6,11 +6,19 @@
     <title>Pluginy pro Minecraft Servery</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-
+    <script>
+        function toggleInfo(event, id) {
+            event.preventDefault();
+            var info = document.getElementById(id);
+            if (info.style.display === "none") {
+                info.style.display = "block";
+            } else {
+                info.style.display = "none";
+            }
+        }
+    </script>
 </head>
 <body>
-
-
     <!-- Loader -->
     <div id="loader">
         <div class="loader-content">
@@ -18,53 +26,64 @@
         </div>
     </div>
     <div class="layout">
-
         <nav class="sidebar">
             <ul>
                 <li><a href="server_jars.html">Serverové JARy</a></li>
                 <li><a href="index.html"><----</a></li>
                 <li><a href="datapacks.html">Datapacky</a></li>
                 <li><a href="optimization.html">Optimalizace</a></li>
-                <li><a href="resources.html">Zdroje</a></li>
+                <li><a href="mody.html">Módy</a></li>
             </ul>
         </nav>
-
         <main class="content">
             <h1>Pluginy pro Minecraft Servery</h1>
             <p>Pluginy jsou zásadní pro personalizaci a rozšíření funkcí vašeho Minecraft serveru. Tento průvodce vám pomůže najít a používat správné pluginy pro vaše potřeby.</p>
 
             <h2>Co jsou to Pluginy?</h2>
-            <p>Pluginy jsou externí moduly, které můžete přidat na svůj server, aby rozšířily jeho funkce. Umožňují vám například přidat nové herní mechaniky, správu serveru, různé mini-hry nebo možnosti pro administrátory.</p>
+            <button class="mod-button" onclick="toggleInfo(event, 'what-are-plugins')">Co jsou to Pluginy?</button>
+            <div id="what-are-plugins" class="mod-info" style="display:none;">
+                <p>Pluginy jsou externí moduly, které můžete přidat na svůj server, aby rozšířily jeho funkce. Umožňují vám například přidat nové herní mechaniky, správu serveru, různé mini-hry nebo možnosti pro administrátory.</p>
+            </div>
 
             <h2>Kam hledat kvalitní pluginy</h2>
-            <p>Existuje několik známých a spolehlivých míst, kde můžete hledat pluginy pro váš server:</p>
-            <ul>
-                <li><a href="https://www.spigotmc.org/resources/" target="_blank">SpigotMC - Pluginy</a> - Největší databáze pluginů pro Spigot a Paper servery. Najdete zde tisíce pluginů pro různé potřeby.</li>
-                <li><a href="https://www.curseforge.com/minecraft/bukkit-plugins" target="_blank">CurseForge - Minecraft Pluginy</a> - Databáze pluginů pro Bukkit a Spigot servery, s mnoha komunitními příspěvky a recenzemi.</li>
-                <li><a href="https://www.mc-market.org/" target="_blank">MC-Market</a> - Tržiště pro Minecraft pluginy a další zdroje, kde si můžete zakoupit profesionální pluginy a skripty.</li>
-                <li><a href="https://modrinth.com/plugins" target="_blank">Modrinth</a> - Skvělá alternativa k CurseForge pro hledání open-source pluginů, především pro modované servery a další modifikace.</li>
-            </ul>
+            <button class="mod-button" onclick="toggleInfo(event, 'where-to-find-plugins')">Kam hledat kvalitní pluginy</button>
+            <div id="where-to-find-plugins" class="mod-info" style="display:none;">
+                <ul>
+                    <li><a href="https://www.spigotmc.org/resources/" target="_blank">SpigotMC - Pluginy</a> - Největší databáze pluginů pro Spigot a Paper servery. Najdete zde tisíce pluginů pro různé potřeby.</li>
+                    <li><a href="https://www.curseforge.com/minecraft/bukkit-plugins" target="_blank">CurseForge - Minecraft Pluginy</a> - Databáze pluginů pro Bukkit a Spigot servery, s mnoha komunitními příspěvky a recenzemi.</li>
+                    <li><a href="https://www.mc-market.org/" target="_blank">MC-Market</a> - Tržiště pro Minecraft pluginy a další zdroje, kde si můžete zakoupit profesionální pluginy a skripty.</li>
+                    <li><a href="https://modrinth.com/plugins" target="_blank">Modrinth</a> - Skvělá alternativa k CurseForge pro hledání open-source pluginů, především pro modované servery a další modifikace.</li>
+                </ul>
+            </div>
 
             <h2>Typy Pluginů</h2>
-            <p>Existuje mnoho různých typů pluginů, v závislosti na účelu, pro který je chcete použít:</p>
-            <ul>
-                <li><strong>Administrační pluginy</strong> - Pro správu serveru, jako je <a href="https://www.spigotmc.org/resources/worldedit.274/" target="_blank">WorldEdit</a> nebo <a href="https://www.spigotmc.org/resources/worldguard.238/" target="_blank">WorldGuard</a>, které umožňují efektivní úpravy světa a nastavení pravidel.</li>
-                <li><strong>Mini-hry a herní mód</strong> - Pluginy pro různé mini-hry, jako je <a href="https://www.spigotmc.org/resources/bedwars.41350/" target="_blank">BedWars</a>, <a href="https://www.spigotmc.org/resources/skyblock.82541/" target="_blank">SkyBlock</a>, nebo <a href="https://www.spigotmc.org/resources/kitpvp.20224/" target="_blank">KitPvP</a>.</li>
-                <li><strong>Economy pluginy</strong> - Pro ekonomické systémy na serveru, jako je <a href="https://www.spigotmc.org/resources/essentialsx.9089/" target="_blank">EssentialsX</a>, které poskytují systém měny, bankovní účty, teleporty a další funkce.</li>
-            </ul>
+            <button class="mod-button" onclick="toggleInfo(event, 'types-of-plugins')">Typy Pluginů</button>
+            <div id="types-of-plugins" class="mod-info" style="display:none;">
+                <ul>
+                    <li><strong>Administrační pluginy</strong> - Pro správu serveru, jako je <a href="https://modrinth.com/plugin/worldedit" target="_blank">WorldEdit</a> nebo <a href="https://modrinth.com/plugin/worldguard" target="_blank">WorldGuard</a>, které umožňují efektivní úpravy světa a nastavení pravidel.</li>
+                    <li><strong>Mini-hry a herní mód</strong> - Pluginy pro různé mini-hry, jako je BedWars, SkyBlock, nebo KitPvP.</li>
+                    <li><strong>Economy pluginy</strong> - Pro ekonomické systémy na serveru, jako je <a href="https://www.spigotmc.org/resources/essentialsx.9089/" target="_blank">EssentialsX</a>, které poskytují systém měny, bankovní účty, teleporty a další funkce.</li>
+                </ul>
+            </div>
 
             <h2>Databáze Placeholderů pro Pluginy</h2>
-            <p>Pokud chcete na vašem serveru používat dynamické placeholdery pro zobrazování informací jako je jméno hráče, stav ekonomiky nebo statistiky, můžete využít <a href="https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders" target="_blank">databázi placeholderů PlaceholderAPI</a>, která nabízí širokou škálu placeholderů pro různé pluginy a systémy.</p>
+            <button class="mod-button" onclick="toggleInfo(event, 'placeholders-database')">Databáze Placeholderů pro Pluginy</button>
+            <div id="placeholders-database" class="mod-info" style="display:none;">
+                <p>Pokud chcete na vašem serveru používat dynamické placeholdery pro zobrazování informací jako je jméno hráče, stav ekonomiky nebo statistiky, můžete využít <a href="https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders" target="_blank">databázi placeholderů PlaceholderAPI</a>, která nabízí širokou škálu placeholderů pro různé pluginy a systémy.</p>
+            </div>
 
             <h2>Hrozby spojené s Cracked Pluginy</h2>
-            <p><strong>Cracked pluginy</strong> jsou nelegálně distribuované verze originálních pluginů. Mohou obsahovat škodlivý kód nebo mohou porušovat autorská práva vývojářů. Používání cracked pluginů na vašem serveru může mít několik rizik:</p>
-            <ul>
-                <li><strong>Bezpečnostní rizika</strong> - Cracked pluginy mohou obsahovat malware, který ohrozí váš server a uživatelská data.</li>
-                <li><strong>Právní důsledky</strong> - Používání cracked pluginů porušuje autorská práva a může vést k právním problémům s vývojáři nebo autory.</li>
-                <li><strong>Nezabezpečený kód</strong> - Kód v cracked pluginu může být špatně napsaný nebo dokonce záměrně obsahovat chyby, které mohou negativně ovlivnit výkon serveru.</li>
-                <li><strong>Chybějící podpora</strong> - U cracked pluginů nezískáte oficiální podporu ani aktualizace, což znamená, že váš server může být náchylnější k chybám a bezpečnostním problémům.</li>
-            </ul>
-            <p>Je vždy lepší investovat do legálních, kvalitních pluginů, které poskytují pravidelné aktualizace a podporu, než riskovat bezpečnost vašeho serveru s nelegálními verzemi.</p>
+            <button class="mod-button" onclick="toggleInfo(event, 'cracked-plugins-threats')">Hrozby spojené s Cracked Pluginy</button>
+            <div id="cracked-plugins-threats" class="mod-info" style="display:none;">
+                <p><strong>Cracked pluginy</strong> jsou nelegálně distribuované verze originálních pluginů. Mohou obsahovat škodlivý kód nebo mohou porušovat autorská práva vývojářů. Používání cracked pluginů na vašem serveru může mít několik rizik:</p>
+                <ul>
+                    <li><strong>Bezpečnostní rizika</strong> - Cracked pluginy mohou obsahovat malware, který ohrozí váš server a uživatelská data.</li>
+                    <li><strong>Právní důsledky</strong> - Používání cracked pluginů porušuje autorská práva a může vést k právním problémům s vývojáři nebo autory.</li>
+                    <li><strong>Nezabezpečený kód</strong> - Kód v cracked pluginu může být špatně napsaný nebo dokonce záměrně obsahovat chyby, které mohou negativně ovlivnit výkon serveru.</li>
+                    <li><strong>Chybějící podpora</strong> - U cracked pluginů nezískáte oficiální podporu ani aktualizace, což znamená, že váš server může být náchylnější k chybám a bezpečnostním problémům.</li>
+                </ul>
+                <p>Je vždy lepší investovat do legálních, kvalitních pluginů, které poskytují pravidelné aktualizace a podporu, než riskovat bezpečnost vašeho serveru s nelegálními verzemi.</p>
+            </div>
 
             <div class="spacer"></div>
             <p style="text-align: center; color: #7f8c8d;">Děkujeme, že používáte náš průvodce pro Minecraft pluginy!</p>
@@ -77,6 +96,5 @@
         </div>
     </footer>
     <script src="scripts.js"></script>
-
 </body>
 </html>
