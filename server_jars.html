@@ -6,7 +6,17 @@
     <title>Serverové JARy</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-
+    <script>
+        function toggleInfo(event, id) {
+            event.preventDefault();
+            var info = document.getElementById(id);
+            if (info.style.display === "none") {
+                info.style.display = "block";
+            } else {
+                info.style.display = "none";
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -30,37 +40,88 @@
                 <li><a href="plugins.html">Pluginy</a></li>
                 <li><a href="datapacks.html">Datapacky</a></li>
                 <li><a href="optimization.html">Optimalizace</a></li>
-                <li><a href="resources.html">Zdroje</a></li>
+                <li><a href="mody.html">Módy</a></li>
             </ul>
         </nav>
 
         <main class="content">
             <h1>Výběr Serverových JARů</h1>
             <p>Při zakládání Minecraft serveru je důležité zvolit správný JAR soubor, který bude nejlépe odpovídat vašim potřebám. Zde jsou nejpopulárnější možnosti:</p>
-
+        
             <h2>JARy pro Pluginové Servery</h2>
-            <h3>Spigot</h3>
-            <p><strong>Spigot</strong> je jedním z nejpoužívanějších JARů pro Minecraft servery. Nabízí skvělou kompatibilitu s pluginy a optimalizaci výkonu. <a href="https://www.spigotmc.org/" target="_blank">Navštívit stránku Spigotu</a>.</p>
-
-            <h3>Paper</h3>
-            <p><strong>Paper</strong> je fork Spigotu, který je zaměřen na vyšší výkon a lepší optimalizaci. <a href="https://papermc.io/" target="_blank">Navštívit stránku Paperu</a>.</p>
-
-            <h3>Pufferfish</h3>
-            <p><strong>Pufferfish</strong> je fork Paperu zaměřený na servery s vysokou zátěží. <a href="https://pufferfish.host/" target="_blank">Navštívit stránku Pufferfish</a>.</p>
-
+            <ul id="jar-list">
+                <li>
+                    <button class="jar-button" onclick="toggleInfo(event, 'spigot-info')">Spigot</button>
+                    <div id="spigot-info" class="jar-info" style="display:none;">
+                        <p><strong>                                                Spigot je jedním z nejpoužívanějších JARů pro Minecraft servery. Nabízí skvělou kompatibilitu s pluginy a optimalizaci výkonu. Spigot je známý svou stabilitou a širokou podporou komunity.
+                        
+                        Spigot také nabízí mnoho pokročilých funkcí, jako je podpora BungeeCord pro propojení více serverů a optimalizace výkonu pro snížení lagů. Navíc je kompatibilní s většinou populárních pluginů, což umožňuje snadné rozšíření funkcionality serveru.
+                        
+                        Pokud hledáte spolehlivý a výkonný JAR pro váš Minecraft server, Spigot je skvělou volbou.</p>
+                        <p><strong>Zdroj + link na stažení: <a href="https://getbukkit.org/download/spigot" target="_blank">Spigot</a></p>
+                    </div>
+                </li>
+                <li>
+                    <button class="jar-button" onclick="toggleInfo(event, 'paper-info')">Paper</button>
+                    <div id="paper-info" class="jar-info" style="display:none;">
+                        <p><strong>                                                Paper je fork Spigotu zaměřený na vyšší výkon a lepší optimalizaci. Nabízí optimalizace pro snížení lagů, zvýšení plynulosti hry a lepší využití hardwarových zdrojů. Paper je ideální volbou pro servery s vysokou zátěží a velkým počtem hráčů.
+                        
+                        Jednou z hlavních výhod Paperu je jeho kompatibilita s pluginy pro Spigot, což znamená, že můžete využívat všechny populární pluginy bez úprav. Paper také nabízí pokročilé konfigurační možnosti a je aktivně vyvíjen komunitou, což zajišťuje pravidelné aktualizace a rychlé opravy chyb.
+                        
+                        Pokud hledáte výkonný a flexibilní JAR pro váš Minecraft server, Paper je vynikající volbou.</p>
+                        <p><strong>Zdroj + link na stažení: <a href="https://papermc.io/downloads/paper" target="_blank">Paper</a></p>
+                    </div>
+                </li>
+                <li>
+                    <button class="jar-button" onclick="toggleInfo(event, 'pufferfish-info')">Pufferfish</button>
+                    <div id="pufferfish-info" class="jar-info" style="display:none;">
+                        <p><strong>                                                Pufferfish je fork Paperu zaměřený na servery s vysokou zátěží. Nabízí maximální výkon a stabilitu i při velkém počtu hráčů. Pufferfish přináší optimalizace a vylepšení, které snižují lagy a zvyšují plynulost hry.
+                        
+                        Pufferfish efektivně využívá hardwarové zdroje a nabízí pokročilé konfigurační možnosti. Je kompatibilní s většinou pluginů pro Paper a je aktivně vyvíjen komunitou.
+                        
+                        Pokud hledáte výkonný a spolehlivý JAR pro váš Minecraft server, Pufferfish je vynikající volbou.</p>
+                        <p><strong>Zdroj + link na stažení: <a href="https://pufferfish.host/downloads" target="_blank">Pufferfish</a></p>
+                    </div>
+                </li>
+            </ul>
+        
             <h2>JARy pro Modované Servery</h2>
-            <h3>Forge</h3>
-            <p><strong>Forge</strong> je nejpopulárnější platforma pro modované servery. <a href="https://files.minecraftforge.net/" target="_blank">Navštívit stránku Forge</a>.</p>
-
-            <h3>Fabric</h3>
-            <p><strong>Fabric</strong> je lehčí alternativou k Forge. <a href="https://fabricmc.net/" target="_blank">Navštívit stránku Fabric</a>.</p>
-
+            <ul id="jar-list">
+                <li>
+                    <button class="jar-button" onclick="toggleInfo(event, 'forge-info')">Forge</button>
+                    <div id="forge-info" class="jar-info" style="display:none;">
+                        <p><strong>                                                Forge je nejpopulárnější platforma pro modované servery. Nabízí širokou podporu modů a rozsáhlou komunitu. Umožňuje snadné přidávání a správu modů, což otevírá nekonečné možnosti pro přizpůsobení herního zážitku.
+                        
+                        Forge je známý svým robustním API a pokročilými nástroji pro ladění a správu modů. Je kompatibilní s většinou populárních modů a díky aktivní komunitě a pravidelným aktualizacím je neustále vylepšován.
+                        
+                        Pokud hledáte flexibilní a výkonnou platformu pro modovaný Minecraft server, Forge je vynikající volbou.</p>
+                        <p><strong>Zdroj + link na stažení: <a href="https://files.minecraftforge.net/net/minecraftforge/forge/" target="_blank">Forge</a></p>
+                    </div>
+                </li>
+                <li>
+                    <button class="jar-button" onclick="toggleInfo(event, 'fabric-info')">Fabric</button>
+                    <div id="fabric-info" class="jar-info" style="display:none;">
+                        <p><strong>                                                                        Fabric je lehčí alternativou k Forge, navržený pro rychlost a flexibilitu. Umožňuje rychlé aktualizace a snadnou integraci nových funkcí. Díky své modularitě vede k lepšímu výkonu a menší zátěži na serveru. Fabric je kompatibilní s mnoha populárními módy a je neustále vylepšován aktivní komunitou.
+                        
+                        Pokud hledáte lehkou a flexibilní platformu pro modovaný Minecraft server, Fabric je vynikající volbou.</p>
+                        <p><strong>Zdroj + link na stažení: <a href="https://fabricmc.net/use/server/" target="_blank">Fabric</a></p>
+                    </div>
+                </li>
+            </ul>
+        
             <h2>Vanilla JARy</h2>
-            <p><strong>Vanilla</strong> je oficiální JAR od Mojangu. <a href="https://www.minecraft.net/en-us/download/server" target="_blank">Navštívit stránku Vanilla serveru</a>.</p>
-
+            <ul id="jar-list">
+                <li>
+                    <button class="jar-button" onclick="toggleInfo(event, 'vanilla-info')">Vanilla</button>
+                    <div id="vanilla-info" class="jar-info" style="display:none;">
+                        <p><strong>Vanilla</strong> je oficiální JAR od Mojangu. <a href="https://www.minecraft.net/en-us/download/server" target="_blank">Navštívit stránku Vanilla serveru</a>.</p>
+                    </div>
+                </li>
+            </ul>
+        
             <h2>Závěr</h2>
             <p>Pro většinu serverů doporučujeme začít s Paper nebo Purpur, pokud chcete pokročilé funkce a nejlepší výkon. Pro modované servery zvažte Forge nebo Fabric v závislosti na potřebné flexibilitě a výkonu. Vyberte si JAR podle vašich specifických požadavků a přání hráčů!</p>
-
+        
             <div class="spacer"></div>
             <p style="text-align: center; color: #7f8c8d;">Děkujeme, že používáte náš průvodce. Hodně štěstí s vaším Minecraft serverem!</p>
         </main>

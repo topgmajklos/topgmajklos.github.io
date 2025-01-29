@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pluginy pro Minecraft Servery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <script>
+        function toggleInfo(event, id) {
+            event.preventDefault();
+            var info = document.getElementById(id);
+            if (info.style.display === "none") {
+                info.style.display = "block";
+            } else {
+                info.style.display = "none";
+            }
+        }
+    </script>
+
+
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-content">
+            <p>Načítání...</p>
+        </div>
+    </div>
+    <div class="layout">
+
+
+        <nav class="sidebar">
+            <ul>
+                <li><a href="server_jars.html">Serverové JARy</a></li>
+                <li><a href="plugins.html">Pluginy</a></li>
+                <li><a href="datapacks.html">Datapacky</a></li>
+                <li><a href="optimization.html">Optimalizace</a></li>
+                <li><a href="index.html"><----</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <h1>Kde stahovat módy?</h1>
+            <p>Doporučil bych stahovat hlavně z ověřených zdrojů jako např.
+            <ul>
+                <li><a href="https://modrinth.com/mods" target="_blank">Modrinth</a> - Spousta módů a lehké stahování.</li>
+                <li><a href="https://www.curseforge.com/minecraft/search?page=1&pageSize=20&sortBy=latest+update&class=mc-mods" target="_blank">curseforge</a> - Spousta módů ale už celkem staré.</li>
+            </ul> </p>
+
+            <h2>Jak nainstalovat módy:</h2>
+            <ol>
+                <li><strong>Stáhněte si mód:</strong> Nejlépe ze stránek na začátku.</li>
+                <li><strong>Stistkněte Windows tlačítko + R</strong> Otevře vám to menu kam napíšete : <code>%appdata%</code></li>
+                <li><strong>Otevřete složku .minecraft</strong> V této složce se nachází vše spojené s minecraftem jako např. screenshoty, módy atd.</li>
+                <li><strong>Otevřete složku mods</strong> Pokud složku mods nemáte tak ji vytvořte.</a>.</li>
+                <li><strong>Vložte módy do složky mods</strong> Pokud je vše správně, zapněte minecraft s verzí pro váš mód(forge/fabric) a vše je hotovo.</li>
+            </ol>
+            <p>Pokud vám to nejde, zkontrolujte zda máte správnou verzi módu a minecraftu.</p>
+
+            <h2>Seznam super módů:</h2>
+            <ul id="mod-list">
+                <li>
+                    <button class="mod-button" onclick="toggleInfo(event, 'mod1-info')">Better Statistics Screen</button>
+                    <div id="mod1-info" class="mod-info" style="display:none;">
+                        <p><strong>Tento Minecraft mód nahrazuje Vanilla statistickou obrazovku novou a vylepšenou statistickou obrazovkou, která je snadněji použitelná a má více užitečných funkcí. Nová statistická obrazovka nabízí snadněji navigovatelný a čitelný UI layout, stejně jako několik filtrů a vyhledávací pole, které vám pomohou snadněji najít potřebné statistiky, zejména když je třeba sledovat desítky, ne-li stovky záznamů.</p>
+                            <img src="https://cdn.modrinth.com/data/n6PXGAoM/images/f612dcb73d9e4ffc4ca0494559a31221396c2435.png" alt="Better Statistics Screen" style="width:100%;max-width:400px;">
+                        <p>Zdroj + link na stažení: <a href="https://modrinth.com/mod/better-stats" target="_blank">Modrinth - Better Statistics Screen</a></p>
+                    </div>
+                </li>
+                <li>
+                    <button class="mod-button" onclick="toggleInfo(event, 'mod2-info')">Shulker Box Tooltip</button>
+                    <div id="mod2-info" class="mod-info" style="display:none;">
+                        <p><strong>Tento mód vám umožňuje vidět náhled obsahu shulker boxu při najetí myší nad něj v inventáři při stisknutí klávesy <code>shift</code>.</p>
+                            <img src="https://cdn.modrinth.com/data/2M01OLQq/images/437f67b3c053f691e268571c8f059aa7f3697dd9.png" alt="Shulker Box Tooltip" style="width:100%;max-width:400px;">
+                        <p>Zdroj + link na stažení: <a href="https://modrinth.com/mod/shulkerboxtooltip" target="_blank">Modrinth - Shulker Box Tooltip</a></p>
+                    </div>
+                </li>
+                <li>
+                    <button class="mod-button" onclick="toggleInfo(event, 'mod3-info')">Auth Me</button>
+                    <div id="mod3-info" class="mod-info" style="display:none;">
+                        <p><strong>Auth Me je Minecraft mód, který přináší autentizaci účtů do hry ve snaze překonat nechvalně známou chybu ověření relace při připojování k serveru.</p>
+                            <img src="https://github.com/axieum/authme/raw/main/demo.gif" alt="Auth Me" style="width:100%;max-width:400px;">
+                        <p>Zdroj + link na stažení: <a href="https://modrinth.com/mod/auth-me" target="_blank">Modrinth - Auth Me</a></p>
+                    </div>
+                </li>
+                <li>
+                    <button class="mod-button" onclick="toggleInfo(event, 'mod4-info')">Tweakeroo</button>
+                    <div id="mod4-info" class="mod-info" style="display:none;">
+                        <p><strong>Tweakeroo je klientský mód, který přidává do hry celou řadu různých "vylepšení". Některé z populárnějších vylepšení jsou Hand Restock, Flexible Block Placement a Accurate Block Placement, Fast Left and Right Click, Gamma Override a Free Camera. Výchozí klávesová zkratka pro otevření konfiguračního menu je <code>X + C.</code></p>
+                        <p>Zdroj + link na stažení: <a href="https://modrinth.com/mod/tweakeroo" target="_blank">Modrinth - Tweakeroo</a></p>
+                    </div>
+                </li>
+                <li>
+                    <button class="mod-button" onclick="toggleInfo(event, 'mod5-info')">Chat Animation + Chat Heads</button>
+                    <div id="mod5-info" class="mod-info" style="display:none;">
+                        <p><strong>Chat Animation - </p>
+                        <p><strong>Chat Animation vylepšuje vizuální stránku chatu přidáním plynulých animací. Mód také odstraňuje indikátor zprávy, což je čára vlevo od zpráv.</p>
+                            <img src="https://cdn.modrinth.com/data/DnNYdJsx/images/784121d04549ae52370fc6d252cf68a0ca6d34ed.gif" alt="Chat Animation" style="width:100%;max-width:400px;">
+                        <p><strong>Chat Heads -</p>
+                        <p><strong>Tento klientský mód přidává hráčské hlavy vedle zpráv v chatu, jak je vidět na obrázku níže. Usnadňuje rozlišení různých lidí v chatu a vypadá to skvěle.</strong></p>
+                            <img src="https://cdn.modrinth.com/data/Wb5oqrBJ/images/fd0ce2a3eeff2bfb68e0cac9bcd5f116202e2427.png" alt="Chat Heads" style="width:100%;max-width:400px;">
+                        <p>Zdroj + link na stažení: <a href="https://modrinth.com/mod/chatanimation" target="_blank">Modrinth - Chat Animation</a> <a href="https://modrinth.com/mod/chat-heads" target="_blank">Modrinth - Chat Heads</a></p>
+                    </div>
+                </li>
+                <!-- Přidej další módy podle potřeby -->
+            </ul>
+
+            <h2>Optimalizační modpacky</h2>
+            <p>Pro lepší výkon a optimalizaci můžete vyzkoušet následující modpacky:</p>
+            <ul>
+                <li><a href="https://modrinth.com/modpack/sop" target="_blank">Simply Optimized</a> - Modpack Simply Optimized si klade za cíl poskytnout základ nejlepších dostupných optimalizačních módů, nakonfigurovaných pro dosažení maximálního výkonu. Díky nespočetným hodinám výzkumu často překonává jiné optimalizační řešení v benchmarcích, a když ne, zjišťuji proč, abych ho dále vylepšil.</li>
+                <li><a href="https://modrinth.com/modpack/fabulously-optimized" target="_blank">Fabulously Optimized</a> - Fabulously Optimized je rychlejší než konkurenční herní klienti, díky moderním výkonovým módům jako Sodium, Lithium a dalším. Přibalené módy byly pečlivě vybrány tak, aby byly bezpečné ve vašich světech a poskytovaly znatelné zrychlení na jakémkoli zařízení.</li>
+            </ul>
+
+
+        </main>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Nexorixik Guide</p>
+        </div>
+    </footer>
+	<script src="scripts.js"></script>
+
+</body>
+</html>
